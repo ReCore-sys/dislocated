@@ -8,6 +8,6 @@ Just as I would like you to credit me, I would like to credit ScaleDrone with th
 I will try to update this as much as I can.
 
 Known bugs:
-Userlist is pretty broken.
-Messages sometimes don't show up
+Userlist is pretty broken.<br>
+Messages sometimes don't show up<br>
 The regular client breaks on mobile. use <a href="bit.do/mobile-dislocated">this</a> for mobile.
