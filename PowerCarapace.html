@@ -1,0 +1,332 @@
+﻿<!DOCTYPE html>
+<html>
+<!-- Version 1.3.1- formatting changes to create a more streamlined interface, removed changelog and transitions for mobile-friendly usage-->
+<!-- PowerCarapace client and theme created by SteelBlue8, Dislocated Chat created by ReCore -->
+
+<head>
+    <script type='text/javascript' src='https://cdn.scaledrone.com/scaledrone.min.js'></script>
+    <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
+    <meta charset="utf-8">
+    <link rel="shortcut icon" href="Icons/icon1.ico" />
+    <title>PowerCarapace v1.3.1</title>
+    <meta name="viewport" content="width=device-width">
+    <style>
+        body {
+            box-sizing: border-box;
+            background: #000647;
+            margin: 0px;
+            color: white;
+            padding: 13px;
+            display: flex;
+            flex-direction: column;
+            max-height: 100vh;
+            font-family: -apple-system, BlinkMacSystemFont, monospace;
+        }
+
+        .members-count,
+        .members-list,
+        .messages {
+            padding: 0px;
+            background: #000647;
+        }
+
+        .messages {
+            flex-shrink: 1;
+            transition: width 1s;
+            overflow-x: hidden;
+            padding-left: 5px;
+            padding-right: 5px;
+            height: 77vh;
+            max-height: 78vh;
+            min-width: 100%;
+        }
+
+        .usercolumn {
+            position: fixed;
+            padding: 5px;
+            overflow: auto;
+            border: 1px solid white;
+            top: 35%;
+            left: 25%;
+            background: #000647;
+            width: 50%;
+            height: 30%;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.7);
+            visibility: hidden;
+        }
+
+            .overlay:target {
+                visibility: visible;
+            }
+
+        .message {
+            padding: 5px 0;
+        }
+
+            .message .member {
+                display: inline-block;
+            }
+
+        .member {
+            padding-right: 10px;
+            position: relative;
+        }
+
+        .message-form {
+            display: flex;
+            flex-shrink: 0;
+        }
+
+        .message-form__input {
+            flex-grow: 1;
+            border: none;
+            color: white;
+            background: #000647;
+            padding: 10px 15px;
+            font-size: 16px;
+            font-family: -apple-system, BlinkMacSystemFont, monospace;
+        }
+
+        .message-form__button {
+            border: none;
+            color: white;
+            font-size: 16px;
+            background: #000647;
+            font-family: -apple-system, BlinkMacSystemFont, monospace;
+        }
+
+        p {
+            margin: 0px;
+            color: white;
+        }
+
+            p:hover {
+                background: yellow;
+                color: #000647;
+            }
+
+        a {
+            margin: 0px;
+            color: white;
+            text-decoration: none;
+        }
+
+            a:hover {
+                background: yellow;
+                color: #000647;
+            }
+
+        .row:after {
+            content: " ";
+            display: table;
+            min-height: 90%;
+            clear: both;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000647;
+            border-left: 1px solid white;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: white;
+        }
+
+            ::-webkit-scrollbar-thumb:hover {
+                background: yellow;
+            }
+    </style>
+</head>
+<body>
+    <div class="body">
+
+        <div>
+            <h1 style="font-family:impact;color:white;margin:0px;font-size:48px;">DISLOCATED</h1>
+            <a href="#popup"><p class="members-count">Loading...<p></a>
+            <hr style="color:white;margin:10px;">
+        </div>
+
+
+
+        <div class="row">
+            <div class="messages">
+                <p style="color:grey;padding:5px;"><i>**You joined Dislocated Chat**</i></p>
+            </div>
+        </div>
+
+        <hr style="color:white;margin:0px;">
+
+        <form class="message-form" onsubmit="return false;">
+            <input class="message-form__input" placeholder="Type here" type="text" />
+            <input class="message-form__button" value="Send" type="submit" />
+        </form>
+
+    </div>
+    <div id="popup" class="overlay">
+        <div class="usercolumn">
+            <a class="close" href="#"><b><u><p style="text-align:center;">Online users- click to close</u></b></p></a>
+            <a href="#changelog"><p>Running client: PowerCarapace v1.3.1</p></a>
+            <hr>
+            <p class="members-list">&nbsp;Loading...</p>
+        </div>
+    </div>
+
+    <div id="changelog" class="overlay">
+        <div class="usercolumn">
+            <a class="close" href="#popup"><b><u><p style="text-align:center;">Changelog- click to close</u></b></p></a>
+            <hr>
+            <p><b><u>1.0</u></b>- Initial build</p>
+            <p><b><u>1.1</u></b>- New layout, userpanel on side</p>
+            <p><p><u>1.2</u></b>- Added custom scrollbar and version information panel</p>
+            <p><b><u>1.2.1</u></b>- added hidden userlist, appears on hover</p>
+            <p><b><u>1.3</u></b>- Toggleable userlist, mobile-friendly design</p>
+            <p><b><u>1.3.1</u></b>- formatting changes, removed version panel in favour of changelog</p>
+        </div>
+    </div>
+
+    <script>
+    // PS! Replace this with your own channel ID
+        // If you use this channel ID your app will stop working in the future
+        const CLIENT_ID = 'pa0nx7j9A5pvcC3f';
+
+        const drone = new ScaleDrone(CLIENT_ID, {
+            data: { // Will be sent out as clientData via events
+                name: getRandomName(),
+                color: getRandomColor(),
+            },
+        });
+
+        let members = [];
+
+        drone.on('open', error => {
+            if (error) {
+                return console.error(error);
+            }
+            console.log('Successfully connected to Scaledrone');
+
+            const room = drone.subscribe('observable-room');
+            room.on('open', error => {
+                if (error) {
+                    return console.error(error);
+                }
+                console.log('Successfully joined room');
+            });
+
+            room.on('members', m => {
+                members = m;
+                updateMembersDOM();
+            });
+
+            room.on('member_join', member => {
+                members.push(member);
+                updateMembersDOM();
+            });
+
+            room.on('member_leave', ({ id }) => {
+                const index = members.findIndex(member => member.id === id);
+                members.splice(index, 1);
+                updateMembersDOM();
+            });
+
+            room.on('data', (text, member) => {
+                if (member) {
+                    addMessageToListDOM(text, member);
+                } else {
+                    // Message is from server
+                }
+            });
+        });
+
+        drone.on('close', event => {
+            console.log('Connection was closed', event);
+        });
+
+        drone.on('error', error => {
+            console.error(error);
+        });
+
+        function getRandomName() {
+            var person = prompt("Please enter your name");
+            if (person == null || person == "") {
+                txt = "Prompt cancelled. Please refresh.";
+            } else {
+                return (person);
+            }
+        }
+
+        function getRandomColor() {
+            return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
+        }
+
+        //------------- DOM STUFF
+
+        const DOM = {
+            membersCount: document.querySelector('.members-count'),
+            membersList: document.querySelector('.members-list'),
+            messages: document.querySelector('.messages'),
+            input: document.querySelector('.message-form__input'),
+            form: document.querySelector('.message-form'),
+        };
+
+        DOM.form.addEventListener('submit', sendMessage);
+
+        function sendMessage() {
+            const value = DOM.input.value;
+            if (value === '') {
+                return;
+            }
+            DOM.input.value = '';
+            drone.publish({
+                room: 'observable-room',
+                message: value,
+            });
+        }
+
+        function createMemberElement(member) {
+            const { name, color } = member.clientData;
+            const el = document.createElement('div');
+            el.appendChild(document.createTextNode(name));
+            el.className = 'member';
+            el.style.color = color;
+            return el;
+        }
+
+        function updateMembersDOM() {
+            DOM.membersCount.innerText = `${members.length} currently online. `;
+            DOM.membersList.innerHTML = '';
+            members.forEach(member =>
+                DOM.membersList.appendChild(createMemberElement(member))
+            );
+        }
+
+        function createMessageElement(text, member) {
+            const el = document.createElement('p');
+            el.appendChild(createMemberElement(member));
+            el.appendChild(document.createTextNode(text));
+            el.className = 'message';
+            return el;
+        }
+
+        function addMessageToListDOM(text, member) {
+            const el = DOM.messages;
+            const wasTop = el.scrollTop === el.scrollHeight - el.clientHeight;
+            el.appendChild(createMessageElement(text, member));
+            if (wasTop) {
+                el.scrollTop = el.scrollHeight - el.clientHeight;
+            }
+        }
+    </script>
+</body>
+</html>
