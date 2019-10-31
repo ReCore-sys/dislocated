@@ -7,7 +7,7 @@ I decided to put it on github as an open source project so feel free to copy cod
 Just as I would like you to credit me, I would like to credit ScaleDrone with the base code for the chat and for hosting the message server.
 I will try to update this as much as I can.
 
-Known bugs:
+Known bugs:<br>
 Userlist is pretty broken.<br>
 Messages sometimes don't show up<br>
 The regular client breaks on mobile. use <a href="bit.do/mobile-dislocated">this</a> for mobile.
