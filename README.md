@@ -10,4 +10,3 @@ I will try to update this as much as I can.
 Known bugs:<br>
 Userlist is pretty broken.<br>
 Messages sometimes don't show up<br>
-The regular client breaks on mobile. use <a href="https://bit.do/mobile-dislocated">this</a> for mobile.
