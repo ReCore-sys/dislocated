@@ -1,0 +1,163 @@
+﻿<!DOCTYPE html>
+<html>
+    <!-- Version 1.0, added Tamper and KnockOff dark themes-->
+    <!-- Tamper client and theme created by SteelBlue8, Dislocated Chat created by ReCore -->
+
+    <head>
+        <script
+            type="text/javascript"
+            src="https://cdn.scaledrone.com/scaledrone.min.js"
+        ></script>
+        <!--<script type='text/javascript' src='http://0.0.0.0:8080/scaledrone.js'></script>-->
+        <link
+            rel="stylesheet"
+            id="pagestyle"
+            href="knockoff-dark.css"
+            type="text/css"
+        />
+        <meta charset="utf-8" />
+        <link rel="shortcut icon" id="icon" href="knockoff.png" />
+        <title>Dislocated</title>
+        <meta name="viewport" content="width=device-width" />
+    </head>
+
+    <body>
+        <!-- Parts of the HTML code that are visible upon load -->
+        <div class="body">
+            <div>
+                <img
+                    src="knockoff.png"
+                    id="image"
+                    style="float: left; height: 55px"
+                />
+                <h1>DISLOCATED</h1>
+                <a href="#popup"
+                    ><p class="members-count">Loading...</p>
+                    <p></p
+                ></a>
+                <hr style="color: white; margin: 10px" />
+            </div>
+
+            <div class="row">
+                <div class="messages" style="height: 75vh">
+                    <p style="padding: 5px" class="welcome_msg">
+                        <i
+                            >You joined Dislocated Chat <br />Please don't be a
+                            dick
+                        </i>
+                    </p>
+                </div>
+            </div>
+
+            <hr style="margin: 0px" />
+
+            <form class="message-form" onsubmit="return false;">
+                <input
+                    class="message-form__input"
+                    placeholder="Type here"
+                    type="text"
+                />
+                <input
+                    class="message-form__button"
+                    value="Send"
+                    type="submit"
+                />
+            </form>
+        </div>
+
+        <!-- All the code for the various pop-up menus (Online users, client switcher, and changelog -->
+        <div id="popup" class="overlay">
+            <div class="sidebar">
+                <div class="heading">
+                    <a class="close" href="#"
+                        ><p class="heading"><b>Online users</b></p></a
+                    >
+                    <a href="#themes"
+                        ><p id="client">Default 1.7.2 (Dark)</p></a
+                    >
+                    <a href="#changes"><p>Changelog</p></a>
+                    <a href="#credits"><p>Credits</p></a>
+                </div>
+                <hr />
+                <p class="members-list">&nbsp;Loading...</p>
+            </div>
+        </div>
+
+        <div id="themes" class="overlay">
+            <div class="sidebar">
+                <div class="heading">
+                    <a class="close" href="#popup"
+                        ><p class="heading"><b>Clients</b></p></a
+                    >
+                </div>
+                <hr />
+                <button onclick="knockoffDark()"><p>Default Dark</p></button>
+                <button onclick="knockoffLight()"><p>Default Light</p></button>
+                <button onclick="communism()"><p>За Родину</p></button>
+                <button onclick="tamper()"><p>Tamper</p></button>
+                <button onclick="classic()"><p>Classic</p></button>
+                <button onclick="worse()"><p>Worse</p></button>
+            </div>
+        </div>
+
+        <div id="changes" class="overlay">
+            <div class="sidebar">
+                <div class="heading">
+                    <a class="close" href="#popup"
+                        ><p class="heading"><b>Changelog</b></p></a
+                    >
+                </div>
+                <hr />
+                <p><b>1.0</b>- Initial build</p>
+                <p><b>1.1</b>- Style improvements</p>
+                <p><b>1.2</b>- Custom username, more info button</p>
+                <p><b>1.3</b>- New, better layout</p>
+                <p>
+                    <b>1.4</b>- Added changelog, icon, custom scrollbar and more
+                </p>
+                <p><b>1.5</b>- Added multiple clients</p>
+                <p>
+                    <b>1.6</b>- Switched to KnockOff, no longer have to type
+                    username when switching clients
+                </p>
+                <p><b>1.7</b>- Switched to Unity formatting</p>
+                <p>
+                    <b>1.7.1</b>- Changed names to increse functionality,
+                    removed typo and just general small fixes.
+                </p>
+                <p><b>1.7.2</b>- GitHub linked</p>
+            </div>
+        </div>
+
+        <div id="credits" class="overlay">
+            <div class="sidebar">
+                <div class="heading">
+                    <a class="close" href="#popup"
+                        ><p class="heading"><b>Credits</b></p></a
+                    >
+                </div>
+                <hr />
+                <p>
+                    This is a project designed as a substitute for Discord.<br />
+                </p>
+                <p>JavaScript and main code by ReCore<br /></p>
+                <p>
+                    Styling, custom usernames and client switching by
+                    SteelBlue8<br />
+                </p>
+                <p>
+                    Testing by D4317, Looke, *Gasp* 32 19 and Vulyoldovah<br />
+                </p>
+                <p>
+                    GitHub available here-
+                    <a
+                        href="https://github.com/Recore-dev/dislocated/tree/master"
+                        ><b>GitHub Repo</b></a
+                    >
+                </p>
+            </div>
+        </div>
+
+        <script src="./script.js"></script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vh;
+    margin: 0px;
+    padding: 13px;
+    background: #23272a;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, Verdana;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.form {
+    display: flex;
+    flex-shrink: 1;
+    overflow: scroll;
+    overflow-x: hidden;
+    padding-left: 5px;
+    padding-right: 5px;
+    height: 72vh;
+    max-height: 78vh;
+    width: 60%;
+    background: #2c2f33;
+    border-radius: 5px;
+    align-items: center;
+    justify-content: center;
+}

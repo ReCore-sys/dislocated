@@ -1,6 +1,6 @@
 ﻿body {
     box-sizing: border-box;
-    background: #23272A;
+    background: #23272a;
     margin: 0px;
     color: white;
     padding: 13px;
@@ -27,7 +27,7 @@
     height: 72vh;
     max-height: 78vh;
     min-width: 100%;
-    background: #2C2F33;
+    background: #2c2f33;
     border-radius: 5px;
 }
 
@@ -38,8 +38,7 @@
     overflow: auto;
     top: 0;
     right: 0;
-    background: #23272A;
-    ;
+    background: #23272a;
     width: 300px;
     height: 100%;
 }
@@ -54,17 +53,17 @@
     visibility: hidden;
 }
 
-    .overlay:target {
-        visibility: visible;
-    }
+.overlay:target {
+    visibility: visible;
+}
 
 .message {
     padding: 5px 0;
 }
 
-    .message .member {
-        display: inline-block;
-    }
+.message .member {
+    display: inline-block;
+}
 
 .member {
     padding-right: 10px;
@@ -82,7 +81,7 @@
     outline: none;
     border-radius: 5px;
     color: white;
-    background: #2C2F33;
+    background: #2c2f33;
     padding: 10px 15px;
     margin-top: 5px;
     font-size: 16px;
@@ -96,15 +95,14 @@
     margin-left: 5px;
     margin-top: 5px;
     font-size: 16px;
-    background: #2C2F33;
+    background: #2c2f33;
     font-family: -apple-system, BlinkMacSystemFont, verdana;
 }
 .title {
-    background: #2C2F33;
+    background: #2c2f33;
     border-radius: 5px;
     padding: 5px;
     margin-bottom: 5px;
-    "
 }
 button {
     border: none;
@@ -114,22 +112,22 @@ button {
     margin: 2px;
     width: 290px;
     font-size: 16px;
-    background: #2C2F33;
+    background: #2c2f33;
     font-family: -apple-system, BlinkMacSystemFont, verdana;
     outline: none;
-    }
+}
 
-    p {
+p {
     margin: 0px;
     color: white;
     transition: background 0.5s;
 }
 
-    p:hover {
-        background-color: rgba(255, 255, 255, 0.05);
-        color: white;
-        border-radius:5px;
-    }
+p:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: white;
+    border-radius: 5px;
+}
 
 a {
     margin: 0px;
@@ -137,9 +135,9 @@ a {
     text-decoration: none;
 }
 
-    a:hover {
-        background: #2C2F33;
-    }
+a:hover {
+    background: #2c2f33;
+}
 
 .row:after {
     content: " ";
@@ -164,9 +162,9 @@ a {
     border-radius: 2px;
 }
 
-    ::-webkit-scrollbar-thumb:hover {
-        background: #4c5159;
-    }
+::-webkit-scrollbar-thumb:hover {
+    background: #4c5159;
+}
 
 .hr {
     color: white;
