@@ -1,0 +1,188 @@
+body {
+  box-sizing: border-box;
+  background: #41d483;
+  margin: 0px;
+  color:white;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh; 
+  font-family: -apple-system, BlinkMacSystemFont, Arial;
+  text-align: justify;
+  text-justify: inter-word;
+}
+ 
+.members-count,
+.members-list,
+.messages {
+  padding: 0px;
+}
+
+.members-count{
+  color:white;
+}
+
+.messages {
+  flex-shrink: 1;
+  box-shadow: -5px 5px 5px #007836;
+  overflow:scroll;
+  overflow-x:hidden;
+  padding-left:5px;
+  padding-right:5px;
+  border-left:5px solid #ff7800;
+  height:77vh;
+  max-height:78vh;
+  min-width:90%;
+  background:white;
+}
+
+.sidebar {
+  position: fixed;
+  padding:5px;
+  box-shadow:-5px 5px 5px #0a0a0a;
+  overflow:auto;
+  top: 0;
+  right: 0;
+  background:#41d483;
+  width:300px;
+  height:100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  visibility:hidden;
+}
+ 
+.overlay:target {
+  visibility:visible;
+}
+
+.message {
+  padding: 5px 0;
+}
+
+.message .member {
+  display: inline-block;
+}
+
+.member {
+  padding-right: 10px;
+  position: relative;
+}
+
+.message-form {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.message-form__input {
+  flex-grow:1;
+  border:none;
+  outline:none;
+  box-shadow: -5px 5px 5px #007836;
+  background:white;
+  border-left:5px solid #ff7800;
+  padding: 10px 15px;
+  margin-top:5px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, Arial;
+}
+
+.message-form__button {
+  border:none;
+  box-shadow: -5px 5px 5px #007836;
+  margin-left:5px;
+  margin-top:5px;
+  font-size: 16px;
+  background:white;
+  font-family: -apple-system, BlinkMacSystemFont, verdana;
+}
+
+.message-form__button:hover{
+  box-shadow: 0px 0px 0px #41d483;
+} 
+
+p {
+  margin:0px;
+  color:black;
+}
+
+p:hover {
+  background:rgba(0, 0, 0, 0.05);
+}
+
+a {
+  margin:0px;
+  text-decoration:none;
+}
+
+.row:after{
+  content:" ";
+  display:table;
+  min-height:90%;
+  clear:both;
+}
+
+::-webkit-scrollbar {
+  width: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: white; 
+}
+     
+::-webkit-scrollbar-thumb {
+  background: #ff7800;
+  transition:background 0.5s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:#db6700;
+}
+
+hr {
+  visibility:hidden;
+}
+
+h1 {
+  font-family:Impact;
+  color:white;
+  margin:0px;
+  font-size:36px;
+}
+
+div.heading {
+  padding:5px;
+  background:white;
+  border-left:5px solid #ff7800;
+  box-shadow: -5px 5px 5px #007836;
+}
+p.heading {
+  color:black;
+  font-size:18px;
+}
+
+button {
+  border:none;
+  padding:5px;
+  border-left:5px solid #ff7800;
+  box-shadow: -5px 5px 5px #007836;
+  background:white;
+  margin:2px;
+  width:290px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, Arial;
+}
+
+button:focus {
+  outline:0;
+}
+
+img {
+  visibility:hidden;
+}

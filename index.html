@@ -8,16 +8,33 @@
             integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
             crossorigin="anonymous"
         ></script>
-        <link rel="stylesheet" href="./dark.css" />
-        <link rel="stylesheet" href="./login.css" />
+        <link rel="stylesheet" href="./oldcss/dark.css" />
+        <link rel="stylesheet" href="./oldcss/login.css" />
+        <script type="module" src="./login.ts"></script>
+        <div>
+            <link
+                rel="apple-touch-icon"
+                sizes="180x180"
+                href="public/apple-touch-icon.png"
+            />
+            <link
+                rel="icon"
+                type="image/png"
+                sizes="32x32"
+                href="public/favicon-32x32.png"
+            />
+            <link
+                rel="icon"
+                type="image/png"
+                sizes="16x16"
+                href="public/favicon-16x16.png"
+            />
+            <link rel="manifest" href="public/site.webmanifest" />
+        </div>
     </head>
     <body>
-        <script src="./login.js"></script>
         <div class="form">
-            <form
-                id="login_form"
-                onsubmit="event.preventDefault(); submit_login()"
-            >
+            <form id="login_form">
                 <label for="username">Username:</label>
                 <input
                     type="text"

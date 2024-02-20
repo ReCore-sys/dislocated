@@ -1,0 +1,162 @@
+body {
+  box-sizing: border-box;
+  background: #000647;
+  margin: 0px;
+  color:white;
+  padding: 13px;
+  display: flex;
+  flex-direction: column;
+  max-height: 100vh; 
+  font-family: -apple-system, BlinkMacSystemFont, monospace;
+}
+
+.members-count,
+.members-list,
+.messages {
+  padding: 0px;
+  background: #000647;
+}
+
+.messages {
+  flex-shrink: 1;
+  transition:width 1s;
+  overflow-x:hidden;
+  padding-left:5px;
+  padding-right:5px;
+  height:77vh;
+  max-height:78vh;
+  min-width:100%;
+}
+
+.sidebar {
+  position: fixed;
+  padding:5px;
+  overflow:auto;
+  border:1px solid white;
+  top: 35%;
+  left: 25%;
+  background:#000647;
+  width:50%;
+  height:30%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  visibility:hidden;
+}
+ 
+.overlay:target {
+  visibility:visible;
+}
+
+.message {
+  padding: 5px 0;
+}
+
+.message .member {
+  display: inline-block;
+}
+
+.member {
+  padding-right: 10px;
+  position: relative;
+}
+
+.message-form {
+  display: flex;
+  flex-shrink: 0;
+}
+
+.message-form__input {
+  flex-grow:1;
+  border:none;
+  color:white;
+  background:#000647;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-family: -apple-system, BlinkMacSystemFont, monospace;
+}
+
+.message-form__button {
+  border:none;
+  color:white;
+  font-size: 16px;
+  background:#000647;
+  font-family: -apple-system, BlinkMacSystemFont, monospace;
+}
+
+p {
+  margin:0px;
+  color:white;
+}
+
+p:hover {
+  background:yellow;
+  color:#000647;
+}
+
+a {
+  margin:0px;
+  color:white;
+  text-decoration:none;
+}
+    
+a:hover {
+  background:yellow;
+  color:#000647;
+}
+
+.row:after{
+  content:" ";
+  display:table;
+  min-height:90%;
+  clear:both;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000647; 
+  border-left:1px solid white;
+}
+     
+::-webkit-scrollbar-thumb {
+  background: white; 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background:yellow; 
+}
+
+h1 {
+  font-family:Impact;
+  color:white;
+  margin:0px;
+  font-size:48px;
+}
+
+p.heading {
+  text-align:center;
+  text-decoration:underline;
+}
+
+button {
+  border:none;
+  color:white;
+  text-align:left;
+  font-size: 16px;
+  width:100%;
+  background:#000647;
+  font-family: -apple-system, BlinkMacSystemFont, monospace;
+}
+
+button:focus {
+  outline:0;
+}
